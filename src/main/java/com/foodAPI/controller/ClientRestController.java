@@ -22,15 +22,14 @@ import com.foodAPI.entity.Client;
 import com.foodAPI.service.ClientService;
 
 
-
 @RestController
-public class ClientController {
+public class ClientRestController {
 	
 	@Autowired
 	@Qualifier("clientServiceImpl")
 	private ClientService clientServiceImpl;
 	
-	private static final Log LOG = LogFactory.getLog(ClientController.class);
+	private static final Log LOG = LogFactory.getLog(ClientRestController.class);
 	
 	@GetMapping("/api/clients") 
 	public ResponseEntity<List<Client>> getAll(){
@@ -39,7 +38,7 @@ public class ClientController {
 	}
 	
 	@GetMapping("/api/clients/{phone}")
-	public  ResponseEntity<Client> findClient(@PathVariable(name = "id") Long phone){
+	public  ResponseEntity<Client> findClient(@PathVariable(name = "phone") Long phone){
 		LOG.info("se ha obtenido a 1 cliente");
 		return new ResponseEntity<Client>(clientServiceImpl.getOne(phone),HttpStatus.OK);
 	}
@@ -63,7 +62,5 @@ public class ClientController {
 		return true;
 	}
 	
-	
-
 	
 }

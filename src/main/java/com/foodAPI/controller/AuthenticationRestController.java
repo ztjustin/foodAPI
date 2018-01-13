@@ -16,12 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.foodAPI.entity.User;
 import com.foodAPI.security.JwtAuthenticationRequest;
 import com.foodAPI.security.JwtTokenUtil;
 import com.foodAPI.service.impl.JwtAuthenticationResponse;
 
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class AuthenticationRestController {

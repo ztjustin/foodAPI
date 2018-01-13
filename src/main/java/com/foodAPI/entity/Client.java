@@ -13,7 +13,7 @@ public class Client implements Serializable{
 	
 	@Id
 	@Column(name="phone",nullable=false,unique=true,length=8)
-	private int phone;
+	private Long phone;
 	
 	@Column(name="name",nullable=false,length=45)
 	private String name;
@@ -44,7 +44,7 @@ public class Client implements Serializable{
 		super();
 	}
 	
-	public Client(int phone, String name, String lastName, String city, String email, boolean guarantor,
+	public Client(Long phone, String name, String lastName, String city, String email, boolean guarantor,
 			String password, int points, boolean state) {
 		super();
 		this.phone = phone;
@@ -60,11 +60,11 @@ public class Client implements Serializable{
 
 
 
-	public int getPhone() {
+	public Long getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(Long phone) {
 		this.phone = phone;
 	}
 
@@ -130,67 +130,6 @@ public class Client implements Serializable{
 
 	public void setGuarantor(boolean guarantor) {
 		this.guarantor = guarantor;
-	}
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((city == null) ? 0 : city.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + (guarantor ? 1231 : 1237);
-		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + phone;
-		result = prime * result + points;
-		result = prime * result + (state ? 1231 : 1237);
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Client other = (Client) obj;
-		if (city == null) {
-			if (other.city != null)
-				return false;
-		} else if (!city.equals(other.city))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (guarantor != other.guarantor)
-			return false;
-		if (lastName == null) {
-			if (other.lastName != null)
-				return false;
-		} else if (!lastName.equals(other.lastName))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (phone != other.phone)
-			return false;
-		if (points != other.points)
-			return false;
-		if (state != other.state)
-			return false;
-		return true;
 	}
 
 }

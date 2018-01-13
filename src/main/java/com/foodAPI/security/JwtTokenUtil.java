@@ -12,11 +12,10 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mobile.device.Device;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import com.foodAPI.component.TimeProvider;
-import com.foodAPI.entity.User;
-
 
 @Component
 public class JwtTokenUtil implements Serializable {
@@ -142,7 +141,7 @@ public class JwtTokenUtil implements Serializable {
         //final Date created = getIssuedAtDateFromToken(token);
         //final Date expiration = getExpirationDateFromToken(token);
         return (
-              username.equals(user.getUserName())
+              username.equals(user.getUsername())
                     && !isTokenExpired(token)
         );
     }
