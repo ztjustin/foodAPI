@@ -26,6 +26,7 @@ $(function () {
     }
 
     function doLogin(loginData) {
+    	console.log(loginData);
         $.ajax({
             url: "/auth",
             type: "POST",
