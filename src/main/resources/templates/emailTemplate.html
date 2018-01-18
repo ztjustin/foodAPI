@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="fragments/layout">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Bievenid@ <span th:text="${name}">!</span></h2>
+	<img alt="" th:src="|cid:${logo}|"/>
+    <p th:text="'Su contrasena es : ' + ${password}">
+            description
+    </p>
+</body>
+</html>
