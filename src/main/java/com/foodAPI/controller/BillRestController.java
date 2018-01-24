@@ -35,7 +35,7 @@ public class BillRestController {
 	}
 	
 	@GetMapping("/api/bills/{billId}")
-	public  ResponseEntity<Bill> findUser(@PathVariable(name = "billId") Long billId){
+	public  ResponseEntity<Bill> findBill(@PathVariable(name = "billId") Long billId){
 		LOG.info("se ha obtenido a 1 factura");
 		return new ResponseEntity<Bill>(billServiceImpl.getOne(billId),HttpStatus.OK);
 	}

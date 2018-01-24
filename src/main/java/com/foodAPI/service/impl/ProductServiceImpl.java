@@ -23,8 +23,8 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public Product getOne(int product_id) {
-		return productJpaRepository.getOne(product_id);
+	public Product getOne(Long productId) {
+		return productJpaRepository.getOne(productId);
 	}
 
 	@Override
@@ -33,10 +33,12 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public void delete(int product_id) {
-		productJpaRepository.delete(product_id);
+	public void delete(long productId) {
+		productJpaRepository.delete(productId);
 	}
 	
-	
+
+
+
 
 }
